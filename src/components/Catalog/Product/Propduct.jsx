@@ -4,7 +4,7 @@ import styles from './Product.module.css'
 const Product = ( { product, setCatalogData, catalogData} ) => {
     const addCart = (id) => {
         const newCatalog = catalogData.map((product) => product.id === id ? {...product, inCart: true} : product)
-        setCatalogData(newCatalog)
+        setCatalogData(newCatalog);
     }
     const removeCart = (id) => {
         const newCatalog = catalogData.map((product) => product.id === id ? {...product, inCart: false} : product)

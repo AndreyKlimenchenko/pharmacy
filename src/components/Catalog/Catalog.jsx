@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom';
 import Product from './Product/Propduct'
 import uuid from 'react-uuid'
 import styles from './Catalog.module.css'
@@ -15,13 +16,15 @@ const Catalog = () => {
     console.log(catalogData)
 
     React.useEffect(() => {
-        localStorage.setItem('catalog', JSON.stringify(catalogData))
+        localStorage.setItem('catalog', JSON.stringify(catalogData));
     }, [catalogData])
 
 
     return (
         <div className={styles.block}>
+            <NavLink className={styles.btn}  to='/cart'>Cart</NavLink>
             {catalogData.map(product => <Product
+            key={product.id}
             catalogData={catalogData}
             setCatalogData={setCatalogData}
             product={product} />)}
