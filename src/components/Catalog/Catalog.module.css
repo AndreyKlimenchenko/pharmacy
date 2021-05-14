@@ -1,0 +1,8 @@
+.block {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 30px;
+    max-width: 650px;
+    padding: 60px;
+    background-color: #E5F7FF;
+}

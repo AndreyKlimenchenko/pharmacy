@@ -1,0 +1,78 @@
+.container {
+    row-gap: 30px;
+    background-color: white;
+    border-radius: 30px;
+    padding: 15px;
+    align-content: center;
+}
+
+.button {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.buttonRemove {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    padding: 7px 5px;
+    border-radius: 7px;
+    border: 1px solid #fefefe;
+}
+.button:after {
+    content: '+';
+}
+.block, .container {
+    display: grid;
+    transition: .2s;
+     position: relative;
+}
+
+.block {
+    background-color: #E7DDF2;
+    height: 200px;
+    border-radius: 32px;
+    align-content: start;
+    text-align: left;
+    padding: 15px;
+}
+.block:hover {
+    background-color: #776FC3;
+}
+
+.block:hover .price, .block:hover .description, .block:hover .name {
+    color: #E7DDF2
+}
+.price {
+    color: #988FBB;
+    font-weight: bold;
+}
+
+.description {
+    color: #988FBB;
+}
+
+.name {
+    color: #776FC3;
+}
+
+.image {
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.image img {
+    max-width: 100%;
+}
+
+.buttonDisable {
+    opacity: .5
+}

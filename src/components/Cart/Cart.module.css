@@ -1,0 +1,21 @@
+.block {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 30px;
+    max-width: 650px;
+    padding: 20px;
+    background-color: #E5F7FF;
+}
+
+.container {
+    list-style-type: none;
+    display: grid;
+    row-gap: 20px;
+}
+
+.buttonRemove {
+    cursor: pointer;
+    padding: 7px 5px;
+    border-radius: 7px;
+    border: 1px solid #fefefe;
+}
