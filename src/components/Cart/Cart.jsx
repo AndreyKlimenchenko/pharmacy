@@ -4,7 +4,6 @@ import styles from './Cart.module.css'
 const Cart = () => {
     const [catalogData, setCatalogData] = React.useState(JSON.parse(localStorage.getItem('catalog')) || [])
     const [totalPrice, setTotalPrice] = useState(catalogData.map(item => ({count: 1, price: Number.parseInt(item.price)})))
-    console.log(totalPrice)
     const changeCount = (event, index) => {
         const newTotalPrice = totalPrice.map((item, idx) => idx === index ? {...item, count: event.currentTarget.value} : item)
         setTotalPrice(newTotalPrice)

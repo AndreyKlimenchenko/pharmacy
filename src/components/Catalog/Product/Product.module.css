@@ -33,7 +33,6 @@
 .block, .container {
     display: grid;
     transition: .2s;
-     position: relative;
 }
 
 .block {

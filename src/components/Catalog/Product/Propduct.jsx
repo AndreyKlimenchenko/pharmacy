@@ -1,7 +1,8 @@
-import React from 'react'
-import styles from './Product.module.css'
+import React from 'react';
+import styles from './Product.module.css';
+import ProductModal from '../../ProductModal/ProductModal';
 
-const Product = ( { product, setCatalogData, catalogData} ) => {
+const Product = ({ product, setCatalogData, catalogData, openedModal, handleOpenModal, handleCloseModal }) => {
     const addCart = (id) => {
         const newCatalog = catalogData.map((product) => product.id === id ? {...product, inCart: true} : product)
         setCatalogData(newCatalog);
@@ -11,7 +12,7 @@ const Product = ( { product, setCatalogData, catalogData} ) => {
         setCatalogData(newCatalog)
     }
     return (
-        <div key={product.id} className={styles.container}>
+        <div key={product.id} className={styles.container} onClick={() => handleOpenModal(product.id)}>
             <div className={styles.image}>
                 <img src={product.image} alt=""/>
             </div>
@@ -27,8 +28,7 @@ const Product = ( { product, setCatalogData, catalogData} ) => {
                 onClick={() => addCart(product.id)}></button>
                 }
             </div>
-
-            
+            {openedModal === product.id && <ProductModal product={product} handleCloseModal={handleCloseModal}/>}
         </div>
     )
 }

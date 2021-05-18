@@ -1,6 +1,6 @@
 import './App.css';
 import Catalog from './components/Catalog/Catalog'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import {NavLink, BrowserRouter, Route, Switch } from 'react-router-dom'
 import Cart from './components/Cart/Cart';
 
 function App() {
@@ -8,6 +8,9 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
+          <Route exact path='/'>
+            <NavLink className="btn"  to='/catalog'>Catalog</NavLink>
+          </Route>
           <Route path='/catalog'>
             <Catalog />
           </Route>
